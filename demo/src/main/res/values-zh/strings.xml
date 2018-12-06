@@ -137,6 +137,7 @@
     <string name="start_with_pop">启动启动CyclerFragment，并关闭自己</string>
     <string name="modify">修改上个页面的标题</string>
     <string name="settings">设置</string>
+    <string name="about">关于</string>
     <string name="action_anim_v">设置全局动画成功! 竖向(默认)</string>
     <string name="swipe_back">侧滑返回</string>
 
@@ -180,4 +181,9 @@
         <item>馄饨类</item>
         <item>其他</item>
     </string-array>
+
+    <string name="about_me">
+        "Name: Sendy\n\n"
+        ""
+    </string>
 </resources>

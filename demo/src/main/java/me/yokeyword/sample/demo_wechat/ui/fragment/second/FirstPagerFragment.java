@@ -100,6 +100,12 @@ public class FirstPagerFragment extends SupportFragment implements SwipeRefreshL
             @Override
             public void run() {
                 mRefreshLayout.setRefreshing(false);
+                List<String> items = new ArrayList<>();
+                for (int i = 0; i < 20; i++) {
+                    String item = "New features--"+i;
+                    items.add(item);
+                }
+                mAdapter.setDatas(items);
             }
         }, 2500);
     }

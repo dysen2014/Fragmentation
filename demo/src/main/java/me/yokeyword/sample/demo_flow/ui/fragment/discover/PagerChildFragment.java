@@ -80,8 +80,9 @@ public class PagerChildFragment extends MySupportFragment {
                     String item;
                     if (mFrom == 0) {
                         item = getString(R.string.recommend) + " " + i;
-                    } else if (mFrom == 1) {
+                    } else if (mFrom == 1 && i == 10) {
                         item = getString(R.string.hot) +" " + i;
+                        break;
                     } else {
                         item = getString(R.string.favorite) +" " + i;
                     }
