@@ -14,8 +14,8 @@ import me.yokeyword.sample.demo_zhihu.ui.fragment.fourth.ZhihuFourthFragment;
 /**
  * Created by YoKeyword on 16/6/6.
  */
-public class MeFragment extends SupportFragment {
-    private TextView mTvBtnSettings;
+public class MeFragment extends SupportFragment implements View.OnClickListener {
+    private TextView mTvBtnSettings, mTvBtnAbouts;
 
     public static MeFragment newInstance() {
 
@@ -36,12 +36,9 @@ public class MeFragment extends SupportFragment {
 
     private void initView(View view) {
         mTvBtnSettings = (TextView) view.findViewById(R.id.tv_btn_settings);
-        mTvBtnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                start(SettingsFragment.newInstance());
-            }
-        });
+        mTvBtnAbouts = (TextView) view.findViewById(R.id.tv_btn_about);
+        mTvBtnSettings.setOnClickListener(this);
+        mTvBtnAbouts.setOnClickListener(this);
     }
 
     @Override
@@ -49,5 +46,17 @@ public class MeFragment extends SupportFragment {
         // 这里实际项目中推荐使用 EventBus接耦
         ((ZhihuFourthFragment)getParentFragment()).onBackToFirstFragment();
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_btn_settings:
+                start(SettingsFragment.newInstance());
+                break;
+            case R.id.tv_btn_about:
+                start(AboutsFragment.newInstance());
+                break;
+        }
     }
 }
